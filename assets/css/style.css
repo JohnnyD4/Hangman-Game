@@ -1,0 +1,15 @@
+.container {
+	margin:0 auto;
+	color: orange; 
+	width: 70%;
+}
+
+div {
+	border: 2px solid black;
+}
+
+.pole {
+	padding:20px 100px;
+	transform: scaleX(-1);
+	height: 300px;
+}
