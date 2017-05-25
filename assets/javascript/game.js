@@ -16,9 +16,11 @@ var splitWord = [];
 
 var correctArray = [];
 
+var userGuess;
+
 document.onkeyup = function(event) {
 
-	var userGuess = event.key;
+	userGuess = event.key;
 
 	var checking = answer.indexOf(userGuess);
 
@@ -39,12 +41,28 @@ document.onkeyup = function(event) {
 			guessesLeft--;
 
 			guessSoFar.push(userGuess);
+
+			console.log('you guessed:', guessSoFar, 'the split array:', splitWord, 'correct guess:', correctArray);
+
 			//add picture here
 
 		} else {
-			correctArray.push(userGuess);
+			//correctArray.push(userGuess);
 			splitWord.splice(splitWord.indexOf(userGuess), 1);
 			console.log("users correct guess", correctArray);
+
+			 // var newCorrectArray = splitWord.map(function(value) {
+			 // 	return value - userGuess;
+			 //  });
+
+			 console.log("New correctArray:", newCorrectArray);
+
+			 for (var i = 0; i < splitWord.length; i++) {
+			 	if (splitWord[i] === userGuess) {
+			 		var newCorrectArray = [userGuess];
+			 		console.log("This works!,")
+			 	}
+			 }
 		}
 
 			 //answer.splice(answer.indexOf(userGuess), 1);
@@ -57,7 +75,7 @@ document.onkeyup = function(event) {
 
 	console.log("Guesses left", guessesLeft);
 
-	console.log("Correct guesses", correctArray);
+	//console.log("Correct guesses", correctArray);
 	// if (userGuess == splitWord.userGuess) {
 	// 	console.log("Winner");
 	// }
